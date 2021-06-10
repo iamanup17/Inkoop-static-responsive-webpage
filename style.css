@@ -1,0 +1,259 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* test */
+/* .sidebar,.main,.left,.right{
+     border:2px solid red; 
+} */
+
+/* .sidebar{   
+    border:2px solid red; 
+} */
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header .menu,
+.cart {
+  display: none;
+}
+.header .menu {
+  margin-top: 30px;
+}
+.header .cart {
+  margin-top: 20px;
+  color: red;
+}
+
+.container {
+  /* border:2px solid red; */
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* -----------------------------------SIDEBAR----------------------------------- */
+.sidebar {
+  flex-basis: 15%;
+}
+.sidebar h3 {
+  margin-left: 20px;
+  font-size: 40px;
+  line-height: 40px;
+}
+/* span{
+    color:red
+} */
+.sidebar ul {
+  list-style-type: none;
+}
+.sidebar ul li {
+  margin: 40px;
+  color: rgb(110, 109, 109);
+  cursor: pointer;
+  transition: 0.2s;
+}
+.sidebar ul li:hover {
+  transform: scale(94%);
+}
+
+.sidebar button {
+  border: 0px solid rgb(185, 118, 118);
+  border-radius: 30px;
+  margin: 15px 40px;
+  padding: 12px 40px;
+  background: rgb(128, 53, 53);
+  color: white;
+  transition: 0.2s;
+}
+.sidebar button:hover {
+  background: rgb(248, 74, 74);
+  transform: scale(97%);
+  cursor: pointer;
+}
+/*----------------------------------------------- Content -----------------------------------------------*/
+.main {
+  flex-basis: 82%;
+  padding: 10px;
+}
+.heading {
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.left {
+  flex-basis: 60%;
+  margin-top: 50px;
+}
+.left h1 {
+  font-weight: 900;
+  font-size: 62px;
+  line-height: 75px;
+}
+.right {
+  flex-basis: 30%;
+  margin-top: 30px;
+}
+.right p {
+  color: rgb(153, 152, 152);
+  margin-top: 10px;
+  line-height: 24px;
+  font-size: 19px;
+}
+.right .line {
+  border: 1px solid white;
+  border-radius: 20px;
+  height: 3px;
+  background: rgb(231, 101, 101);
+  width: 70px;
+  margin-left: 0px;
+  margin-top: 20px;
+}
+/* ------------------------------------------PRODUCT ROW------------------------------------------ */
+.pro-row {
+  /* border:1px solid green; */
+  margin-top: 50px;
+  display: flex;
+  /* justify-content: space-between; */
+  flex-wrap: wrap;
+  padding: 10px;
+}
+.pro-row .pro {
+  flex-basis: 16%;
+  /* border:1px solid red; */
+  border-radius: 20px;
+  box-shadow: 0px 10px 10px 10px rgba(80, 79, 79, 0.1);
+  margin: 1px 5px;
+}
+.pro-row .pro img {
+  width: 100px;
+  height: 100px;
+  margin-top: 20px;
+  margin-left: 35px;
+  margin-right: 35px;
+  border-radius: 50%;
+}
+.pro-row .pro h3 {
+  text-align: center;
+  margin: 16px 0px;
+  font-size: 15px;
+  font-family: sans-serif;
+}
+
+/* -----------------------------------------MEDIA QUERIES----------------------------------------- */
+
+@media only screen and (max-width: 600px) {
+  .container,
+  .main .heading {
+    flex-direction: column;
+  }
+
+  .header .menu,
+  .cart {
+    display: block;
+  }
+
+  .left h1 {
+    font-size: 32px;
+    line-height: 45px;
+  }
+  .main .heading .right {
+    position: relative;
+    top: 380px;
+  }
+  .sidebar {
+    flex-basis: 20%;
+    text-align: center;
+  }
+  .sidebar h3 {
+    margin-top: 20px;
+  }
+  .sidebar span {
+    display: none;
+  }
+  .heading {
+    margin: 0px 20px;
+  }
+  .pro-row {
+    padding: 10px;
+    position: relative;
+    bottom: 150px;
+  }
+
+  .pro-row .pro img {
+    margin: 12px;
+    margin-bottom: 0px;
+  }
+  .pro-row .pro h3 {
+    margin: 2px;
+    margin-bottom: 0px;
+  }
+  .pro-row .pro {
+    flex-basis: 20%;
+    margin: 2px 10px;
+  }
+  .pro-row .pro5 {
+    display: none;
+  }
+  .sidebar ul li {
+    margin: 15px 10px;
+  }
+}
+@media (min-width: 900px) {
+  .container {
+    flex-direction: row;
+  }
+}
+@media (min-width: 600px) and (max-width: 1025px) {
+  .container {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+  .sidebar {
+    flex-basis: 10%;
+  }
+  .pro-row .pro5 {
+    display: none;
+  }
+  .sidebar li {
+    margin: 4px 10px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .sidebar ul {
+    position: absolute;
+    top: 90px;
+    left: 0;
+    background: rgb(27, 24, 24);
+    width: 100%;
+    /* color:rgb(255, 255, 255); */
+    overflow: hidden;
+    transition: max-height 0.5s;
+  }
+  .sidebar ul li {
+    color: rgb(245, 245, 245);
+    display: inline-block;
+    padding: 8px 0px;
+    margin: 4px 4px 10px;
+  }
+  .sidebar ul button {
+    display: none;
+  }
+  .sidebar .menu {
+    display: block;
+    cursor: pointer;
+  }
+ 
+}
+@media only screen and (min-width: 700px) {
+    .main .heading{
+        margin-top:100px;
+    }
+}
